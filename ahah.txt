@@ -1,0 +1,117 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class btth extends JFrame {
+    btth(){
+        this.setTitle("Employee Info");
+        GridBagLayout layout = new GridBagLayout();
+        this.setLayout(layout);
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.fill = GridBagConstraints.BOTH;
+
+        constraints.gridx=1;
+        constraints.gridy=1;
+        constraints.gridheight=1;
+        constraints.gridwidth=1;
+        Label name = new Label("Name: ");
+        layout.setConstraints(name,constraints);
+        constraints.gridx=2;
+        constraints.gridy=1;
+        constraints.gridheight=1;
+        constraints.gridwidth=4;
+        TextField txtname = new TextField(10);
+        layout.setConstraints(txtname,constraints);
+
+        constraints.gridx=1;
+        constraints.gridy=2;
+        constraints.gridheight=1;
+        constraints.gridwidth=1;
+        Label birth = new Label("Birth: ");
+        layout.setConstraints(birth,constraints);
+        constraints.gridx=2;
+        constraints.gridy=2;
+        constraints.gridheight=1;
+        constraints.gridwidth=4;
+        TextField txtbirth = new TextField(10);
+        layout.setConstraints(txtbirth,constraints);
+
+        constraints.gridx=2;
+        constraints.gridy=3;
+        constraints.gridheight=1;
+        constraints.gridwidth=4;
+        TextField txtaddres = new TextField(10);
+        layout.setConstraints(txtaddres,constraints);
+        constraints.gridx=1;
+        constraints.gridy=3;
+        constraints.gridwidth=1;
+        constraints.gridheight=1;
+        Label address = new Label("address");
+        layout.setConstraints(address,constraints);
+
+        constraints.gridx=1;
+        constraints.gridy=4;
+        constraints.gridheight=1;
+        constraints.gridwidth=1;
+        Label sex= new Label("Sex");
+        layout.setConstraints(sex,constraints);
+        Checkbox male,female;
+        CheckboxGroup g= new CheckboxGroup();
+        constraints.gridx=2;
+        constraints.gridy=4;
+        constraints.gridwidth=1;
+        constraints.gridheight=1;
+        male= new Checkbox("Male",g,true);
+        layout.setConstraints(male,constraints);
+        constraints.gridx=4;
+        constraints.gridy=4;
+        constraints.gridwidth=1;
+        constraints.gridheight=1;
+        female= new Checkbox("Female",g,true);
+        layout.setConstraints(female,constraints);
+
+        constraints.gridx=2;
+        constraints.gridy=5;
+        constraints.gridwidth=1;
+        constraints.gridheight=1;
+        Button add = new Button("add");
+        layout.setConstraints(add,constraints);
+
+        constraints.gridx=3;
+        constraints.gridy=5;
+        constraints.gridwidth=1;
+        constraints.gridheight=1;
+        Button find = new Button("find");
+        layout.setConstraints(find,constraints);
+        constraints.gridx=4;
+        constraints.gridy=5;
+        constraints.gridwidth=1;
+        constraints.gridheight=1;
+        Button delete = new Button("delete");
+        layout.setConstraints(delete,constraints);
+        constraints.gridx=5;
+        constraints.gridy=5;
+        constraints.gridwidth=1;
+        constraints.gridheight=1;
+        Button update = new Button("update");
+        layout.setConstraints(update,constraints);
+        this.add(male);
+        this.add(female);
+        this.add(add);
+        this.add(find);
+        this.add(delete);
+        this.add(update);
+        this.add(name);
+        this.add(address);
+        this.add(sex);
+        this.add(txtname);
+        this.add(txtaddres);
+        this.add(birth);
+        this.add(txtbirth);
+        this.pack();
+        this.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new btth();
+    }
+}
